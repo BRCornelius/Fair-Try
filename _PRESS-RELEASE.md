@@ -18,27 +18,37 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  Caloiripies Recipe Search
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  Find recipes based on calories and protein source
+  
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  This recipe search will allow users to find recipes that fit their calorie needs, then filter through those recipes based on the dish's anchoring protein.  If you don't know what you want for dinner, but you know it can only have a certain number of calories, this search engine is for you!
 
 ## Problem ##
   > Describe the problem your product solves.
+  Calorie counting isn't easy.  Sometimes, it is necessary to grab something quick for breakfast and lunch, but that quick little bite may have consumed 75% of the day's available calories.  Now you are stuck trying to find something for dinner that is less than 500 calories.  On top of that, you've been good so far this week and have been mostly consuming lean proteins, but your partner is getting tired of chicken and fish.  
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  This search app will store calorically appropriate recipes in a database and fetch recipes based on the anchoring protein.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  "We are kept from our goals, not by obstacles, but by a clear path to a lesser goal."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  Go to the website, enter a calorie range to fetch recipes, then enter an ingredient to display appropriate recipes.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "My family is healthy, happy, and fed.  Thanks Caloripies!"
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  Check out the app and plan your next meal!

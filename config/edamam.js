@@ -1,0 +1,2 @@
+window.EDAMAM_API = '04c48a27fe8b98c5e22513639642bc1e';
+window.EDAMAM_ID = '12dee925';
