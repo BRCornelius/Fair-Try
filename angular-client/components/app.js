@@ -10,7 +10,7 @@ angular.module('app')
 
     $scope.ButtonClick = function () {
       
-      window.alert('alert')
+      window.alert(this.searchText)
     }
 
     this.searchResults = (input) => {
@@ -24,7 +24,7 @@ angular.module('app')
     };
 }).component('app', {
   bindings: {
-    searchValue: "$ctrl.searchText"
+    searchText: "@"
   },
   controller: 'AppCtrl',
   templateUrl: '/templates/index.html'
