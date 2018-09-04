@@ -3,9 +3,10 @@ var bodyParser = require('body-parser');
 var items = require('../database-mongo');
 
 var app = express();
-
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../angular-client'));
 app.use(express.static(__dirname + '/../node_modules'));
+
 app.get('/', function(req, res){
   res.render('index.js');
 });
@@ -17,8 +18,8 @@ app.get('/search', function (req, res) {
       // res.sendStatus(500);
     } else {
       // console.log('success')
-      // console.log(res)
-      console.log(req);
+      console.log(res)
+      // console.log(data);
 
     }
   });
