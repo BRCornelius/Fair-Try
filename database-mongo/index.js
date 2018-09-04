@@ -34,8 +34,8 @@ var store = function(recipe, callback){
 //     }
 //   });
 // };
-
-module.exports.selectAll = selectAll;
+module.exports.store = store;
+// module.exports.selectAll = selectAll;
 
 // const bodyParser = require('body-parser');
 // mongoose.connect('mongodb://cornelius:Scarlet86@ds141932.mlab.com:41932/cornelius');

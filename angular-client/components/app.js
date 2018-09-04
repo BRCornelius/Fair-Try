@@ -2,6 +2,7 @@
 angular.module('app')
 
   .controller('AppCtrl', function($scope, $http) {
+    $scope.recipeArray = [];
     $scope.ButtonClick = function () {
       // window.alert(this.searchText)
       let searchValue = this.searchText;
@@ -13,17 +14,21 @@ angular.module('app')
       //   .catch(err=>window.alert(err));
       $http.get("https://api.edamam.com/search?q=" + searchValue + "&app_id=12dee925&app_key=04c48a27fe8b98c5e22513639642bc1e&from=0&to=3&calories=200-650&time=0-45&diet=high-protein").then(function(res) {
         // console.log(res)               /*CHECK!*/
-        console.log(res.data.hits);       /*CHECK!*/
-        // let recipes = res.data.hits
-            // recipes.forEach(recipe => {
-              // db.ships.insert({name: recipe.name})              
-            // });
+        // console.log(res.data.hits);       /*CHECK!*/
+        let recipes = res.data.hits;
+        for(let i=0; i< recipes.length; i++){
+          let recipe = recipes[i];
+          console.log(recipe);
+          let document = {name: recipe.label, image: recipe.image, serves: recipe.yield, calories: recipe.calories, url: recipe.url}
+          $scope.recipeArray.push(document);
+        }
+      console.log($scope.recipeArray);    
       })
-    
     }
   }).component('app', {
     bindings: {
-      searchText: "@"
+      searchText: "@",
+      store: '&'
     },
     controller: 'AppCtrl',
     templateUrl: '/templates/index.html'
