@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var items = require('../database-mongo');
+var recipes = require('../database-mongo');
 
 var app = express();
 app.use(bodyParser.json());
@@ -12,7 +12,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/search', function (req, res) {
-  items.selectAll(function(err, data) {
+  recipes.selectAll(function(err, data) {
     if(err) {
       console.log('err')
       // res.sendStatus(500);

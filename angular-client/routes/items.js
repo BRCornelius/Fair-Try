@@ -1,5 +1,5 @@
 angular.module('app')
-.service('edamam', function($http, $window) {
+.service('store', function($http, $window) {
   this.getAll = function(query, callback) {
     $http.get("https://api.edamam.com/search", {
       parameters: {

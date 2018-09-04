@@ -11,24 +11,20 @@ angular.module('app')
       //     console.log("success!")
       //   )
       //   .catch(err=>window.alert(err));
-      $http.get("https://api.edamam.com/search?q=" + searchValue + "&app_id=12dee925&app_key=04c48a27fe8b98c5e22513639642bc1e&from=0&to=3&calories=200-650&time=0-45&diet=high-protein").then(function(res)
-        {
-            // console.log(res)               /*CHECK!*/
-            // console.log(res.data.hits);       /*CHECK!*/
-            let recipes = res.data.hits
-            recipes.forEach...
-        });
+      $http.get("https://api.edamam.com/search?q=" + searchValue + "&app_id=12dee925&app_key=04c48a27fe8b98c5e22513639642bc1e&from=0&to=3&calories=200-650&time=0-45&diet=high-protein").then(function(res) {
+        // console.log(res)               /*CHECK!*/
+        console.log(res.data.hits);       /*CHECK!*/
+        // let recipes = res.data.hits
+            // recipes.forEach(recipe => {
+              // db.ships.insert({name: recipe.name})              
+            // });
+      })
+    
     }
-
-    this.handleClick = () => {
-      this.service.search(this.input, () => {
-        this.result(data);
-      });
-    };
-}).component('app', {
-  bindings: {
-    searchText: "@"
-  },
-  controller: 'AppCtrl',
-  templateUrl: '/templates/index.html'
+  }).component('app', {
+    bindings: {
+      searchText: "@"
+    },
+    controller: 'AppCtrl',
+    templateUrl: '/templates/index.html'
 });
