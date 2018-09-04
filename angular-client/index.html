@@ -14,10 +14,18 @@
 </head>
 <body ng-app="app">
   <div>
-    <div class='search form-inline'>
+    <div class='search form-inline' ng-controller="AppCtrl">
       <input type="text" ng-model="searchText" />
-      <button class="btn" ng-click="$ctrl.search()">button</button>
-        <script></script>
+      <!-- <script type="text/javascript">
+        var app = angular.module('MyApp', [])
+        app.controller('MyController', function ($scope) {
+          $scope.ButtonClick = function () {
+            $scope.Message = "Button clicked."
+            window.alert('alert')
+          }
+        });
+      </script> -->
+      <button ng-click="ButtonClick()">button</button>
       <h4>Hello {{ searchText }}</h4>
     </div>
     <div>
