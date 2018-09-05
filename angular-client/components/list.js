@@ -1,7 +1,7 @@
 angular.module('app')
 .component('list', {
   bindings: {
-    recipes: '<',
+    items: '<',
   },
   controller: function() {},
   templateUrl: '/templates/list.html'
