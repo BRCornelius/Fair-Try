@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://cornelius:Scarlet86@ds141932.mlab.com:41932/cornelius');
+mongoose.connect('mongodb://Cornelius:Scarlet86@ds145752.mlab.com:45752/recipes');
 
 var db = mongoose.connection;
 
@@ -12,80 +12,44 @@ db.once('open', function() {
 });
 
 var recipeSchema = mongoose.Schema({
-  name: Number,
+  name: String,
   image: String,
   serves: Number,
   calories: Number,
-  url: String
+  url: String,
+  dislikes: Number
 });
 
 var Recipe = mongoose.model('Recipe', recipeSchema);
 
-var store = function(recipe, callback){
-  db.recipes.insert(recipe);
+var store = function(doc){
+  var recipe = new Recipe(doc);
+  recipe.save(function (err) {
+    if (err){
+      console.log (err);
+    }
+  });
 }
 
-// var selectAll = function(callback) {
-//   Item.find({}, function(err, items) {
-//     if(err) {
-//       callback(err, null);
-//     } else {
-//       callback(null, items);
-//     }
-//   });
-// };
+var dislike = function(name, callback){
+  recipe.update(function(err){
+    if(err){
+      console.log(err);
+    }
+  })
+}
 
-module.exports.selectAll = selectAll;
+var fetch = function(callback){
+  recipe.find(function(err, recipes) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(recipes);
+      callback(recipes);
+    }
+  }).limit(25).sort({'dislikes': 1})
+}
 
-// const bodyParser = require('body-parser');
-// mongoose.connect('mongodb://cornelius:Scarlet86@ds141932.mlab.com:41932/cornelius');
-
-// let repoSchema = mongoose.Schema({
-//   // TODO: your schema here!
-//   username     : String,
-//   gitHubId       : Number,
-//   name     : String,
-//   url      : String,
-//   watchers     : Number
-// });
-
-// let Repo = mongoose.model('Repo', repoSchema);
-
-// let save = function(doc){
-//   //https://mongoosejs.com/docs/guide.html
-//   // TODO: format documents before running them through this function
-//   // This function should save a repo or repos to
-//   // the MongoDB
-//   // const repoArray = [];
-
-//   //  console.log(); 
-// // console.log(doc);
-//   var repo = new Repo(doc); //new document
-//   // console.log(repo)
-//   repo.save(function (err) {
-//     if (err){
-//       console.log (err);
-//     }
-//     // saved!
-//     // db.collection.insert(repo);
-//   });
-    
-//   // repoArray.push(repoObj);
-// // } 
-
-// }
-
-// var getRepos = function(callback) { 
-//   Repo.find(function(err, repos) {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log(repos);
-//       callback(repos);
-//     }
-//   }).limit(25).sort({'watchers': 1});
-  
-// }
-
-// module.exports.getRepos = getRepos;
-// module.exports.save = save;
+module.exports.store = store;
+module.exports.fetch = fetch;
+module.exports.dislike = dislike;
