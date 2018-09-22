@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/../angular-client'));
 app.use(express.static(__dirname + '/../node_modules'));
 
 app.get('/', function(req, res){
-  res.render('index.js');
+  res.render('components/app.js');
 });
 
 app.get('/search', function (req, res) {

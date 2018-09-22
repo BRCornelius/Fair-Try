@@ -6,11 +6,8 @@
     <h3 class='subtitle'>We store terrible food so you don't have to.</h3>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
   <script src="angular/angular.js"></script>
-  <script type="text/javascript" src="index.js"></script>
-  <script type="text/javascript" src="routes/items.js"></script>
+  <!-- <script type="text/javascript" src="index.js"></script> -->
   <script type="text/javascript" src="components/app.js"></script>
-  <script type="text/javascript" src="components/list.js"></script>
-  <script type="text/javascript" src="components/listItem.js"></script>
 </head>
 <body ng-app="app">
   <div>
@@ -32,10 +29,10 @@
     <div ng-controller="AppCtrl">
         <h4> List Component </h4>
          <!-- There are {{recArr.length}} recipes. -->
-        <list-item ng-repeat="recipe in $" recipe=recipe />
-        <ul id="recipes">
+        <list-item ng-repeat="recipe in $ctrl.recipes" recipe=recipe />
+        <!-- <ul id="recipes">
           <li>{{ $scope.recArr[0] }}{{}}{{}}{{}}{{}}</li>
-        </ul>
+        </ul> -->
       </div>
   </div>
   
